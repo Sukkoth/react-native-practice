@@ -1,40 +1,28 @@
 import "@expo/metro-runtime";
 
-import { ImageBackground, Text, View } from "react-native";
+import { ScrollView, StatusBar, StyleSheet, View } from "react-native";
 
-import image from "./assets/bg-green.jpg";
-import Body from "./components/Login2/Body";
+import Header from "./components/Header";
+import Body from "./components/Body/Body";
+import BottomNav from "./components/BottomNav";
+
 export default function App() {
   return (
-    <ImageBackground source={image} resizeMode='cover' style={{ flex: 1 }}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 35,
-            color: "white",
-            paddingLeft: 30,
-            fontWeight: "600",
-          }}
-        >
-          Sign In
-        </Text>
-      </View>
-      <View
-        style={{
-          flex: 5,
-          borderTopRightRadius: 30,
-          borderTopLeftRadius: 30,
-          padding: 30,
-          backgroundColor: "white",
-        }}
-      >
+    <View style={styles.mainContainer}>
+      <ScrollView>
+        <Header />
         <Body />
-      </View>
-    </ImageBackground>
+        <StatusBar barStyle='dark-content' backgroundColor='#fceced' />
+      </ScrollView>
+      <BottomNav />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: "rgb(252, 236, 237)",
+    padding: 20,
+    flex: 1,
+  },
+});
