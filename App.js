@@ -1,19 +1,19 @@
 import "@expo/metro-runtime";
 
-import { ScrollView, StatusBar, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import Header from "./components/Header";
-import Body from "./components/Body/Body";
 import BottomNav from "./components/BottomNav";
+import PersonalData from "./components/PersonalData";
+import Main from "./components/Main";
 
 export default function App() {
   return (
     <View style={styles.mainContainer}>
-      <ScrollView>
-        <Header />
-        <Body />
-        <StatusBar barStyle='dark-content' backgroundColor='#fceced' />
-      </ScrollView>
+      <View style={{ flex: 1, paddingBottom: 10 }}>
+        {/* <Main /> */}
+        <PersonalData />
+      </View>
+
       <BottomNav />
     </View>
   );
